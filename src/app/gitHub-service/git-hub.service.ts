@@ -49,8 +49,8 @@ this.repositories = [];
     interface ApiResponse {
       name: string;
       description: string;
-      created_at: any;
-      updated_at: any;
+      created_at: Date;
+      updated_at: Date;
     }
     const promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>
