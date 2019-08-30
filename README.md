@@ -50,4 +50,6 @@ Your project must be deployed and the deployed link should be submitted.
 UserName input
 ## Output Examples
 After clicking on submit button, you get the username of github, the description, number of repositories, created date and updated date.
+## Technology used
+Angular CLI, Bootstrap, Typescript , HTML , CSS,
 
