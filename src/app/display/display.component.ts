@@ -20,8 +20,10 @@ export class DisplayComponent implements OnInit {
   ngOnInit() {
     const userData = this.route.snapshot.paramMap.get('name');
     this.service.myUserRequest(userData);
+    this.service.myRepoRequest(userData);
     this.displayUser = this.service.users;
-    console.log(this.displayUser);
+    this.displayRepo = this.service.repositories;
+    // console.log(this.displayUser);
   }
 
 }

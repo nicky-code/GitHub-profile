@@ -31,7 +31,7 @@ this.repositories = [];
         this.users.avatar_url = response.avatar_url;
         this.users.public_repos = response.public_repos;
 
-        console.log(this.users);
+        // console.log(this.users);
         resolve(userName);
     },
     error => {
@@ -47,25 +47,25 @@ this.repositories = [];
 
   myRepoRequest(repoName) {
     interface ApiResponse {
-      full_name: string;
+      name: string;
       description: string;
       created_at: any;
       updated_at: any;
     }
     const promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>
-      ('https://api.github.com/users/' + repoName + 'repos/access_token=' + environment.apiKey).toPromise().then(response => {
+      ('https://api.github.com/users/' + repoName + '/repos?access_token=' + environment.apiKey).toPromise().then(response => {
       // tslint:disable-next-line: forin
       for (const i in response) {
-        this.repositories.push(response[i]);
+        this.repositories.push(new Repository(response[i].name, response[i].description, response[i].created_at, response[i].updated_at));
       }
-        // this.repositories.full_name = '';
-        // this.repositories.description = '';
-        // this.repositories.created_at = '';
-        // this.repositories.updated_at = '';
+      // this.repositories.name = ''
+      // this.repositories.description ="" ;
+      // this.repositories.created_at = "" ;
+      // this.repositories.updated_at = "" ;
 
       console.log(this.repositories);
-      resolve(repoName);
+      resolve();
     },
     error => {
       this.repositories  = [];

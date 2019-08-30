@@ -5,4 +5,14 @@
 </div>
 <div>
     <p>{{displayUser.login}}</p>
+    <img src="{{displayUser.avatar_url}}">
+    <p>{{displayUser.public_repos}}</p>
+  </div>
+
+  <div *ngFor="let repo of displayRepo">
+      <p>{{repo.name}}</p>
+      <p>{{repo.description}}</p>
+      <p>{{repo.created_at}}</p>
+      <p>{{repo.updated_at}}</p>
+
   </div>

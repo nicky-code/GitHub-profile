@@ -12,10 +12,10 @@ export class FormComponent implements OnInit {
   aline(ok) {
     this.nicole = ok;
     console.log(this.nicole);
-    this.router.navigate(['/display',this.nicole])
+    this.router.navigate(['/display', this.nicole]);
   }
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
