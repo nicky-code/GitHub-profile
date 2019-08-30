@@ -5,7 +5,7 @@ import { FormComponent } from './form/form.component';
 
 
 const routes: Routes = [
-  { path: 'display', component: DisplayComponent},
+  { path: 'display/:name', component: DisplayComponent},
   { path: '', component: FormComponent },
 ];
 
