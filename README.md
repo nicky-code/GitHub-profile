@@ -46,10 +46,18 @@ The HTTP request should be able to search for both GitHub users and GitHub repos
 Your Project must be well designed and visually appealing and of portfolio quality.
 Your project must have a well-documented README file.
 Your project must be deployed and the deployed link should be submitted.
+
 ## Input Examples
 UserName input
+
 ## Output Examples
 After clicking on submit button, you get the username of github, the description, number of repositories, created date and updated date.
+
 ## Technology used
 Angular CLI, Bootstrap, Typescript , HTML , CSS,
 
+## My link repository
+
+
+## Title Licence
+Copyright(c)2019 Aline Nicole UWAMARIYA
