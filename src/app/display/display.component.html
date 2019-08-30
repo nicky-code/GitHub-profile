@@ -12,7 +12,7 @@
   <div *ngFor="let repo of displayRepo">
       <p>{{repo.name}}</p>
       <p>{{repo.description}}</p>
-      <p>{{repo.created_at}}</p>
-      <p>{{repo.updated_at}}</p>
+      <p>{{repo.created_at|dateCount}}</p>
+      <p>{{repo.updated_at|dateCount}}</p>
 
   </div>
