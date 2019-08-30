@@ -10,11 +10,30 @@
 h1{
     font-style: italic;
     color: brown;
-    font-size: 40px;
+    font-size: 47px;
     text-align: center;
 }
 
 .form{
-    margin-left: 20px;
-    margin-top: 70px;
+    margin-left: 50px;
+    margin-top: 120px;
+}
+
+#user{
+    font-size: 30px;
+    color: rgb(29, 27, 27);
+    font-style: italic;
+}
+#name{
+    font-size: 37px;
+}
+#submit{
+    font-size: 37px;
+    margin-top: 25px;
+    color: brown;
+    font-style: italic;
+}
+#submit:hover{
+    color: rgb(95, 95, 179);
+    background-color: gray;
 }
