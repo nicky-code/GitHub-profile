@@ -25,7 +25,7 @@ this.repositories = [];
     }
     const promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>
-      ('https://api.github.com/users/' + userName + 'access_token=' + environment.apiKey).toPromise().then(response => {
+      ('https://api.github.com/users/' + userName + '?access_token=' + environment.apiKey).toPromise().then(response => {
 
         this.users.login = response.login;
         this.users.avatar_url = response.avatar_url;
@@ -55,17 +55,20 @@ this.repositories = [];
     const promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>
       ('https://api.github.com/users/' + repoName + 'repos/access_token=' + environment.apiKey).toPromise().then(response => {
+      // tslint:disable-next-line: forin
+      for (const i in response) {
+        this.repositories.push(response[i]);
+      }
+        // this.repositories.full_name = '';
+        // this.repositories.description = '';
+        // this.repositories.created_at = '';
+        // this.repositories.updated_at = '';
 
-        this.repositories.full_name = response.full_name;
-        this.repositories.description = response.description;
-        this.repositories.created_at = response.created_at;
-        this.repositories.updated_at = response.updated_at;
-
-        console.log(this.repositories);
-        resolve(repoName);
+      console.log(this.repositories);
+      resolve(repoName);
     },
     error => {
-      this.repositories.full_name  = 'sorry,sorry,sorry doesn`t solve anything';
+      this.repositories  = [];
 
       reject(error);
     });
