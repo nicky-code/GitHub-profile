@@ -30,8 +30,8 @@ this.repositories = [];
         this.users.login = response.login;
         this.users.avatar_url = response.avatar_url;
         this.users.public_repos = response.public_repos;
-         // tslint:disable-next-line: align
-         console.log(this.users);
+
+        console.log(this.users);
         resolve(userName);
     },
     error => {
@@ -45,7 +45,34 @@ this.repositories = [];
   }
 
 
+  myRepoRequest(repoName) {
+    interface ApiResponse {
+      full_name: string;
+      description: string;
+      created_at: any;
+      updated_at: any;
+    }
+    const promise = new Promise((resolve, reject) => {
+      this.http.get<ApiResponse>
+      ('https://api.github.com/users/' + repoName + 'repos/access_token=' + environment.apiKey).toPromise().then(response => {
 
+        this.repositories.full_name = response.full_name;
+        this.repositories.description = response.description;
+        this.repositories.created_at = response.created_at;
+        this.repositories.updated_at = response.updated_at;
 
+        console.log(this.repositories);
+        resolve(repoName);
+    },
+    error => {
+      this.repositories.full_name  = 'sorry,sorry,sorry doesn`t solve anything';
+
+      reject(error);
+    });
+  });
+
+    return promise;
+
+  }
 
 }
