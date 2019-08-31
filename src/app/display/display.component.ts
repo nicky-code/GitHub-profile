@@ -34,11 +34,10 @@ export class DisplayComponent implements OnInit {
     const dateDifferenceSeconds = dateDifference * 0.001;
     const dateCounter = dateDifferenceSeconds / secondsInDay;
 
-    if (dateCounter >= 1 ) {
-      return dateCounter;
+    if (dateCounter < 1) {
+      return 0;
     } else {
-    //   return 0;
-    // }
+      return dateCounter;
+    }
   }
-}
 }
