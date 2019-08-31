@@ -4,7 +4,7 @@ import { GitHubService } from '../gitHub-service/git-hub.service';
 import { UseExistingWebDriver } from 'protractor/built/driverProviders';
 import { User } from '../user';
 import { Repository } from '../repository';
-
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'app-display',
@@ -26,4 +26,18 @@ export class DisplayComponent implements OnInit {
     // console.log(this.displayUser);
   }
 
+  transform(value: any): number {
+    const today: Date = new Date();
+    const todayWithNoTime: any = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const dateDifference = Math.abs(value - todayWithNoTime);
+    const secondsInDay = 86400;
+    const dateDifferenceSeconds = dateDifference * 0.001;
+    const dateCounter = dateDifferenceSeconds / secondsInDay;
+
+    if (dateCounter >= 1 ) {
+      return dateCounter;
+    } else {
+      return 0;
+    }
+  }
 }
