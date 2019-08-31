@@ -37,7 +37,8 @@ export class DisplayComponent implements OnInit {
     if (dateCounter >= 1 ) {
       return dateCounter;
     } else {
-      return 0;
-    }
+    //   return 0;
+    // }
   }
+}
 }
