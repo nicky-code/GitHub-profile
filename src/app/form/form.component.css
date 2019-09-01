@@ -12,6 +12,7 @@ h1{
     color: brown;
     font-size: 47px;
     text-align: center;
+    margin-top: 15px;
 }
 h2{
     font-style: italic;
@@ -30,7 +31,8 @@ h2{
     font-style: italic;
 }
 #name{
-    font-size: 27px;
+    font-size: 20px;
+    width: 30%;
 }
 #submit{
     font-size: 25px;

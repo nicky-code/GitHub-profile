@@ -8,14 +8,21 @@
 
 #login{
     font-style: italic;
-    font-size: 35px;
-    color:rgb(126, 34, 34);
+    font-size: 40px;
+    color:rgb(148, 32, 148);
 }
-#repoName , #repoDes , #repoCreat , #repoUpdat {
+ #repoDes , #repoCreat , #repoUpdat {
     color: solid black;
-    font-size: 20px;
+    font-size: 17px;
 }
 #pub{
     font-size: 25px;
-    color:  solid blue;  
+    color:rgb(105, 16, 78);  
+}
+#repoName{
+    color:rgb(105, 16, 78);
+    font-size: 17px; 
+}
+.form{
+    margin-top: 50px;
 }

@@ -3,16 +3,18 @@
     <h1 class="display-4 text-center" id="profile">GitHub Profile!</h1>
     <!-- <hr class="my-4"> -->
 </div>
-    <div >
+<div class="row">
+    <div class="col-md-6">
         <p id="login">{{displayUser.login}}</p>
         <img src="{{displayUser.avatar_url}}" width="270" height="290">
         <p id="pub">{{displayUser.public_repos}}</p>
   </div>
 
-  <div *ngFor="let repo of displayRepo" id="repo">
+  <div *ngFor="let repo of displayRepo" id="repo" class="col-md-6">
       <p id="repoName"><strong>Repository Name:</strong>  {{repo.name}}</p>
       <p id="repoDes"><strong>Repository Description :</strong> {{repo.description}}</p>
       <p id="repoCreat"><strong>Created at :</strong> {{repo.created_at|dateCount}}</p>
       <p id="repoUpdat"><strong>Updated at :</strong> {{repo.updated_at|dateCount}}</p>
 
   </div>
+</div>
