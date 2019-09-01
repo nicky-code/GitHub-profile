@@ -49,22 +49,23 @@ this.repositories = [];
     interface ApiResponse {
       name: string;
       description: string;
-      created_at: any;
-      updated_at: any;
+      created_at: Date;
+      updated_at: Date;
     }
     const promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>
       ('https://api.github.com/users/' + repoName + '/repos?access_token=' + environment.apiKey).toPromise().then(response => {
       // tslint:disable-next-line: forin
       for (const i in response) {
-        this.repositories.push(new Repository(response[i].name, response[i].description, response[i].created_at, response[i].updated_at));
+        // tslint:disable-next-line: max-line-length
+        this.repositories.push(new Repository(response[i].name, response[i].description, new Date(response[i].created_at), new Date(response[i].updated_at)));
       }
       // this.repositories.name = ''
       // this.repositories.description ="" ;
       // this.repositories.created_at = "" ;
       // this.repositories.updated_at = "" ;
 
-      console.log(this.repositories);
+      // console.log(this.repositories);
       resolve();
     },
     error => {

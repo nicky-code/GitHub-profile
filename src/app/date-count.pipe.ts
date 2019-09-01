@@ -12,11 +12,11 @@ export class DateCountPipe implements PipeTransform {
     const secondsInDay = 86400;
     const dateDifferenceSeconds = dateDifference * 0.001;
     const dateCounter = dateDifferenceSeconds / secondsInDay;
-
-    if (dateCounter < 1) {
-      return 0;
+    // console.log(dateCounter)
+    if (dateCounter >= 1 ) {
+      return Math.round(dateCounter);
     } else {
-      return dateCounter;
+      return 0;
     }
   }
 }

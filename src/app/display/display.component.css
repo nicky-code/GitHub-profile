@@ -1,5 +1,5 @@
 #display{
-    background-color: gray;
+    background-color: rgb(192, 184, 184);
 }
 #profile{
     color: brown;
@@ -8,5 +8,14 @@
 
 #login{
     font-style: italic;
+    font-size: 35px;
+    color:rgb(126, 34, 34);
+}
+#repoName , #repoDes , #repoCreat , #repoUpdat {
+    color: solid black;
+    font-size: 20px;
+}
+#pub{
     font-size: 25px;
+    color:  solid blue;  
 }

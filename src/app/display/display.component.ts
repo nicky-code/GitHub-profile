@@ -23,7 +23,8 @@ export class DisplayComponent implements OnInit {
     this.service.myRepoRequest(userData);
     this.displayUser = this.service.users;
     this.displayRepo = this.service.repositories;
-    // console.log(this.displayUser);
+    // console.log(this.displayRepo)
+    // console.log(this.displayRepo);
   }
 
   transform(value: any): number {
